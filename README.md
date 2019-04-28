@@ -1,6 +1,6 @@
 # OpenClassrooms_P4_BlogPHP
 
-Créez un blog pour un écrivain.
+Créer un blog pour un écrivain.
 
 
 ## Installation
