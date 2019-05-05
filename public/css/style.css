@@ -1,32 +1,32 @@
 /* ------------- POLICES DU SITE ------------- */
 
 @font-face {
-  font-family: 'robotoregular';
-  src: url('../font/Roboto-Regular-webfont.woff') format('woff');
+  font-family: 'lacuna-webfont';
+  src: url('../font/lacuna-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
-@font-face {
+/*@font-face {
   font-family: 'robotobold';
   src: url('../font/Roboto-Bold-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-}
+}*/
 
 @font-face {
-  font-family: 'robotomedium';
-  src: url('../font/Roboto-Medium-webfont.woff') format('woff');
+  font-family: 'lacuna-italic';
+  src: url('../font/lacuna-italic-webfont.woff') format('woff');
   font-weight: normal;
-  font-style: normal;
+  font-style: italic;
 }
 
-@font-face {
+/*@font-face {
   font-family: 'robotoblack';
   src: url('../font/Roboto-Black-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
-}
+}*/
 
 
 /* ------------- REGLES DU SITE ------------- */
@@ -38,7 +38,7 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
-  font-family: 'robotoregular', Arial, sans-serif;
+  font-family: 'lacuna-webfont', Helvetica, sans-serif;
 }
 
 .bloc_page {
