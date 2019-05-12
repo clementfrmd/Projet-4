@@ -1,4 +1,4 @@
-/* ------------- POLICES DU SITE ------------- */
+/* ------------- FONT ------------- */
 
 @font-face {
   font-family: 'lacuna-webfont';
@@ -7,13 +7,6 @@
   font-style: normal;
 }
 
-/*@font-face {
-  font-family: 'robotobold';
-  src: url('../font/Roboto-Bold-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}*/
-
 @font-face {
   font-family: 'lacuna-italic';
   src: url('../font/lacuna-italic-webfont.woff') format('woff');
@@ -21,15 +14,53 @@
   font-style: italic;
 }
 
-/*@font-face {
-  font-family: 'robotoblack';
-  src: url('../font/Roboto-Black-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}*/
 
+/* ------------- Snow ------------- */
 
-/* ------------- REGLES DU SITE ------------- */
+.hero {
+	min-height: 100vh;
+	min-height: 30rem;
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}
+
+.snow {
+	position: absolute;
+	min-width: 100vw;
+	min-height: 100vh;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+
+.snow .svg {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+#snow-top-layer {
+	will-change: transform;
+	transform: translateY(-768px);
+	animation: fall 22.5s infinite linear;
+}
+
+#snow-bottom-layer {
+	will-change: transform;
+	transform: translateY(-768px);
+	animation: fall 45s infinite linear;
+}
+
+@keyframes fall {
+	
+	100% {
+		transform: translateY(0);
+	}
+}
 
 /* ------------- Mise en page général ------------- */
 body {
@@ -89,7 +120,7 @@ li {
   flex-wrap: wrap;
 }
 
-/* Titre */
+/* Title */
 
 .menuTitle {
   display: flex;
@@ -100,7 +131,7 @@ li {
 .menuTitle h1 {
   padding: 5px 20px 5px 20px;
   margin: 0;
-  color: rgb(102, 177, 3);
+  color:white;
   text-shadow: black 0.1em 0.1em 0.1em;
 }
 
@@ -109,7 +140,7 @@ li {
   padding: 0 10px 15px 10px;
 }
 
-/* Menu de navigation */
+/* Navigation menu */
 
 .menu {
   display: flex;
@@ -133,7 +164,7 @@ li {
 }
 
 
-/* ------------- ASIDE ------------- */
+/* ------------- Aside ------------- */
 
 
 .aside {
@@ -176,7 +207,7 @@ li {
 }
 
 
-/* ------------- CONTENT ------------- */
+/* ------------- Content ------------- */
 
 
 time {
@@ -218,7 +249,7 @@ footer {
 }
 
 
-/* ------------- FORMULAIRE DE CONNEXION ------------- */
+/* ------------- Connexion ------------- */
 
 
 .contentLogin {
@@ -260,7 +291,7 @@ footer {
 }
 
 
-/* ---------------- COMMENTAIRES SIGNALES ------------ */
+/* ---------------- Reported Comments ------------ */
 
 
 .report {
@@ -304,7 +335,7 @@ footer {
 }
 
 
-/* ------------- COMMENTAIRES -------------*/
+/* ------------- Comments -------------*/
 
 
 .comments {
@@ -374,7 +405,7 @@ textarea {
 }
 
 .signal {
-  color: red;
+  color: #f93e3e;
   font-size: 1em;
 }
 
