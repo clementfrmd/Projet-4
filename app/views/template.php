@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="icon" href="img/book-mark.ico" />
     <script src="https://cloud.tinymce.com/5/tinymce.min.js?apiKey=jk5zgalrr7c3ab5mjwbfebop58ypzu99ajn1oz92f7jaca6q"></script>
-  <script>
+ <script>
   tinymce.init({
     selector: '#mytextarea'
   });
@@ -127,8 +127,14 @@
 
     <footer>
       <p>©Jean Forteroche - Billet simple pour l'Alaska - 2019<br />
-      Projet 4 - OpenClassrooms / <a href="http://clement-fermaud.com/" target="_blank" style="color: grey">Clément Fermaud</p>
+      <button onclick="myFunction()">Infos</button>
+      <a href="http://clement-fermaud.com/" target="_blank" style="color: grey"> - Clément Fermaud</p>
     </footer>
     </div>
+    <script>
+function myFunction() {
+  alert("Projet 4 - OpenClassrooms / Création du blog d'un écrivain fictif");
+}
+</script>
   </body>
 </html>

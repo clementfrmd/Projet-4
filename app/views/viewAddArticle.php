@@ -7,7 +7,7 @@
   <div class="menuAside">
     <h2>Gérer les chapitres</h2>
     <ul>
-      <li><a href="index.php?action=addArticleView"><i class="fas fa-plus"></i> Ajouter un chapitre</a></li>
+      <li><a href="index.php?action=addArticleView"><i class="fas fa-plus"></i> Ajouter un chapitre :</a></li>
 
       <!-- Liste des titres des articles -->
       <?php foreach ($articlesList as $articleList): ?>
@@ -22,7 +22,7 @@
 
 <div class="content">
   <div class="articles">
-  <h2 class="articleTitle"><i class="far fa-edit"></i> Ajouter un nouvel article </h2>
+  <h2 class="articleTitle"><i class="far fa-edit"></i> Ajouter un nouvel article :</h2>
 
   <!-- FORMULAIRE AJOUT D4ARTICLE -->
   <form action="index.php?action=addArticle&statut=0" method="post">
@@ -34,6 +34,7 @@
     <!-- Contenu de l'article -->
     <textarea name="txtContent" id="mytextarea"></textarea>
     <!-- Bouton d'envoie -->
+<br>
     <button type="submit">Enregistrer</button>
     <button type="submit" formaction="index.php?action=addArticle&statut=1">Publier</button>
   </form>

@@ -159,8 +159,8 @@ li {
 }
 
 .menu a:hover {
-  color: rgb(102, 177, 3);
-  border-bottom: 2px solid rgb(102, 177, 3);
+  color: rgb(49, 135, 149);
+  border-bottom: 2px solid rgb(160, 205, 212);
 }
 
 
@@ -230,8 +230,8 @@ button {
   width: 80px;
   height: 20px;
   border-radius: 5px;
-  background-color: rgb(102, 177, 3);
-  color: rgb(49, 135, 149);
+  background-color: whitesmoke;
+  color: grey;
   border: 0;
   cursor: pointer;
 }
@@ -259,7 +259,7 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: rgb(102, 177, 3);
+  color: rgb(160, 205, 212);
 }
 
 .contentLogin h2 {
@@ -283,7 +283,7 @@ footer {
 }
 
 .formConnexion fieldset {
-  border: 1px solid rgb(102, 177, 3);
+  border: 1px solid rgb(160, 205, 212);
 }
 
 .formConnexion input {
@@ -314,7 +314,7 @@ footer {
   font-size: 0.9em;
 }
 .content h2 {
-  color: rgb(102, 177, 3);
+  color: white;
   text-shadow: black 0.1em 0.1em 0.1em;
   font-size: 1.5em;
 }
@@ -327,7 +327,7 @@ footer {
 }
 
 .articles a {
-  color: rgb(102, 177, 3);
+  color: rgb(white);
 }
 
 .articles header {
@@ -349,23 +349,23 @@ footer {
 }
 
 .comments h3 {
-  color: rgb(102, 177, 3);
+  color: rgb(white);
   font-size: 1.5em;
   text-decoration: underline;
   margin: 0 0 20px 0;
 }
 
 .comments a {
-  color: rgb(102, 177, 3);
+  color: rgb(white);
 }
 
 .comments legend {
-  color: rgb(102, 177, 3);
+  color: rgb(white);
   font-size: 1.1em;
 }
 
 .comments fieldset {
-  border: 1px solid rgb(102, 177, 3);
+  border: 1px solid (white);
   margin-top: 20px;
 }
 
@@ -375,7 +375,7 @@ footer {
 }
 
 .commentsList {
-  border-top: 2px solid rgb(102, 177, 3);
+  border-top: 2px solid rgb(white);
 }
 
 
