@@ -5,7 +5,7 @@
 
 <aside class="aside">
   <div class="menuAside">
-    <h2>Liste des chapitres</h2>
+    <h2><a href="index.php">Liste des chapitres</h2>
     <ul>
       <!-- Liste des titres des articles -->
       <?php foreach ($articlesList as $articleList): ?>
