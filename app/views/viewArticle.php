@@ -1,4 +1,4 @@
-<!-- TITRE DE LA PAGE -->
+<!-- Title -->
 <?php $this->title = $article['title']; ?>
 
 <!-- MAIN -->
@@ -7,7 +7,7 @@
   <div class="menuAside">
     <h2>Liste des chapitres</h2>
     <ul>
-      <!-- Liste des titres des articles -->
+      <!-- List of articles -->
       <?php foreach ($articlesList as $articleList): ?>
         <?php if ($articleList['statut']): ?>
         <li><a href="<?= "index.php?action=article&id=" . $articleList['id'] ?>">
@@ -57,12 +57,11 @@
       </fieldset>
     </form>
 
-
     <!-- AFFICHAGE DES COMMENTAIRES -->
     <div class="commentsList">
       <?php foreach ($comments as $comment): ?>
-        <!-- FORMULAIRE POUR SIGNALER LE COMMENTAIRE -->
-        <form class="formReport" action="index.php?action=reportComment" method="post">
+        <!-- FORMULAIRE POUR SIGNALER LE COMMENTAIRE 
+        <form class="formReport" action="index.php?action=reportComment" method="post"> -->
           <fieldset class="reportComment">
             <!-- Nom et date d'ajout du commentaire -->
             <legend><b><?= $comment['username'] ?></b> a commenté :</legend>
@@ -72,26 +71,21 @@
               <!-- Si commentaire n'est pas signalé -->
               <?php if (!$comment['report']) { ?>
                 <!-- Bouton signaler -->
+                <a href="index.php?action=reportComment&idcomment=<?= $comment['id'] ?>">SIGNALER</a>
                 <button type="submit" class="buttonReport">Signaler</i></button>
               <?php } else {
                   echo "<i class='signal'>COMMENTAIRE SIGNALE !!</i>";
                 }
               ?>
             </div>
-
-
-
             <!-- Affiche le commentaire -->
             <p><?= $comment['comment'] ?></p>
-            <!-- Données envoyées si le commentaire est signalé -->
-            <input type="hidden" name="idArticle" value="<?= $comment['articleId'] ?>" />
-            <input type="hidden" name="username" value="<?= $comment['username'] ?>" />
-            <input type="hidden" name="txtComment" value="<?= $comment['comment'] ?>" />
-            <input type="hidden" name="idComment" value="<?= $comment['id'] ?>" />
+            <!-- Données envoyées si le commentaire est signalé 
+            <input type="hidden" name="idComment" value="<?= $comment['id'] ?>" />-->
 
             <!-- Sinon affiche que le commentaire a été signalé -->
           </fieldset>
-        </form>
+       <!-- </form>-->
       <?php endforeach; ?>
     </div>
   </div>

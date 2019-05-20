@@ -22,7 +22,7 @@
 
 <div class="content">
   <div class="articles">
-  <h2 class="articleTitle"><i class="far fa-edit"></i> Ajouter un nouvel article :</h2>
+  <h2 class="articleTitle"><i class="far fa-edit"></i> Ajouter un nouveau chapitre :</h2>
 
   <!-- FORMULAIRE AJOUT D4ARTICLE -->
   <form action="index.php?action=addArticle&statut=0" method="post">

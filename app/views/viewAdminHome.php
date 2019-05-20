@@ -9,7 +9,7 @@
     <ul>
       <li><a href="index.php?action=addArticleView"><i class="fas fa-folder-plus"></i> Ajouter un chapitre</a></li>
 
-      <!-- Liste of articles -->
+      <!-- List of articles -->
       <?php foreach ($articlesList as $articleList): ?>
         <li><a href="<?= "index.php?action=articleAdmin&id=" . $articleList['id'] ?>">
           <?php if (!$articleList['statut']): ?>

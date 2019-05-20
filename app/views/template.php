@@ -16,7 +16,7 @@
   </script>
     <title> <?= $title ?> </title>
   </head>
-  <body>
+  <body onload="checkCookie()">
     <div class="bloc_page">
 
     <!-- HEADER -->
@@ -131,6 +131,7 @@
       <a href="http://clement-fermaud.com/" target="_blank" style="color: grey"> - Clément Fermaud</p>
     </footer>
     </div>
+    <!--<script src="../js/cookieName.js"></script>-->
     <script>
 function myFunction() {
   alert("Projet 4 - OpenClassrooms / Création du blog d'un écrivain fictif");
