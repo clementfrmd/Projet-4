@@ -1,4 +1,4 @@
-# OpenClassrooms_P4_BlogPHP
+# OpenClassrooms P4 Blog PHP
 
 Créer un blog pour un écrivain.
 
