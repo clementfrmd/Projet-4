@@ -24,7 +24,7 @@
   <div class="articles">
   <h2 class="articleTitle"><i class="far fa-edit"></i> Ajouter un nouveau chapitre :</h2>
 
-  <!-- FORMULAIRE AJOUT D4ARTICLE -->
+  <!-- FORMULAIRE AJOUT D'ARTICLE -->
   <form action="index.php?action=addArticle&statut=0" method="post">
     <p>
       <!-- Titre de l'article -->

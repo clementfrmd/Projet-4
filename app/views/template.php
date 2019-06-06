@@ -128,7 +128,7 @@
     <footer>
       <p>©Jean Forteroche - Billet simple pour l'Alaska - 2019<br />
       <button onclick="myFunction()">Infos</button>
-      <a href="http://clement-fermaud.com/" target="_blank" style="color: grey"> - Clément Fermaud</p>
+      <a href="http://clement-fermaud.com/" target="_blank" style="color: white"> - Clément Fermaud</p>
     </footer>
     </div>
     <!--<script src="../js/cookieName.js"></script>-->
