@@ -36,19 +36,27 @@
     }
 
     // Ajoute un article
-    public function addArticle(Articles $articles)
+    // public function addArticle(Articles $articles)
+    // {
+    //   $sql = "INSERT INTO articles(title, content, dateArt, statut) VALUES(?,?,NOW(),?)";
+    //   $newArticle = $this->executeRequest($sql, array($articles->title(), $articles->content(), $articles->statut()));
+
+    //   return $newArticle;
+    // }
+// Ajoute un article SL
+    public function addArticle($title, $content, $statut)
     {
       $sql = "INSERT INTO articles(title, content, dateArt, statut) VALUES(?,?,NOW(),?)";
-      $newArticle = $this->executeRequest($sql, array($articles->title(), $articles->content(), $articles->statut()));
+      $newArticle = $this->executeRequest($sql, array($title, $content, $statut));
 
       return $newArticle;
     }
 
     // Modifie un article
-    public function updateArticle(Articles $articles)
+    public function updateArticle($title, $content, $statut, $id)
     {
       $sql = "UPDATE articles SET title = ?, content = ?, statut = ? WHERE id = ?";
-      $newArticle = $this->executeRequest($sql, array($articles->title(), $articles->content(), $articles->statut(), $articles->id()));
+      $newArticle = $this->executeRequest($sql, array($title, $content, $statut, $id));
 
       return $newArticle;
     }

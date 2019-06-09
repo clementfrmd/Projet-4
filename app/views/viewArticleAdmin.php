@@ -13,7 +13,7 @@
       <?php foreach ($articlesList as $articleList): ?>
         <li><a href="<?= "index.php?action=articleAdmin&id=" . $articleList['id'] ?>">
           <?php if (!$articleList['statut']): ?>
-            <i class="fas fa-exclamation signal"></i>
+            <i class="fas fa-bell signal"></i>
           <?php endif; ?><?= $articleList['title'] ?></a>
         </li>
       <?php endforeach; ?>
