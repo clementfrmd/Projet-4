@@ -43,7 +43,13 @@
 
       return $newComment;
     }
+public function reportComment($id)
+{
+  $sql = "UPDATE comments SET report = 1 WHERE id = ?";
+      $newComment = $this->executeRequest($sql, array($id));
 
+      return $newComment;
+}
     // Efface un commentaire
     public function deleteComment($id)
     {

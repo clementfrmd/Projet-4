@@ -4,7 +4,7 @@
   use App\Models\ArticlesManager;
   use App\Models\CommentsManager;
   use App\Models\Comments;
-  use App\Models\Articles;
+  // use App\Models\Articles;
   use App\Views\View;
 
   class ArticlesController
@@ -39,8 +39,10 @@
     // Add comments to the article
     public function commentArticle($articleId, $username, $comment)
     {
-      $newComment = new Comments(['articleId' => $articleId, 'username' => $username, 'comment' => $comment]);
-      $this->comments->addComment($newComment);
+      //var_dump ($_POST);
+      //die();
+      // $newComment = new Comments(['articleId' => $articleId, 'username' => $username, 'comment' => $comment]);
+      $this->comments->addComment($articleId, $username, $comment);
 
       // Reload the article
       $this->article($articleId);
@@ -50,8 +52,13 @@
     // Article modification function
     public function changeComment($articleId, $username, $comment, $report, $id)
     {
-      $commentUpdate = new Comments(['articleId' => $articleId, 'username' => $username, 'comment' => $comment, 'report' => $report, 'id' => $id]);
-      $this->comments->updateComment($commentUpdate);
+      // $commentUpdate = new Comments(['articleId' => $articleId, 'username' => $username, 'comment' => $comment, 'report' => $report, 'id' => $id]);
+      $this->comments->updateComment($articleId, $username, $comment, $report, $id);
+    }
+    public function reportComment($id)
+    {
+      $this->comments->reportComment($id);
+      // echo "commentaire signalé";
     }
   }
 ?>

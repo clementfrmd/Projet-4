@@ -131,21 +131,23 @@
 
 
     // Ajoute un nouvel article
-    public function newArticle($title, $content, $statut)
+   public function newArticle($title, $content, $statut)
     {
-      $newArticle = new Articles(['title' => $title, 'content' => $content, 'statut' => $statut]);
-      $this->article->addArticle($newArticle);
-    }
+    //  $newArticle = new Articles(['title' => $title, 'content' => $content, 'statut' => $statut]);
+     $this->article->addArticle($title, $content, $statut);
+     header("Location: index.php");
+   }
 
 
     // Modifie un article
     public function changeArticle($title, $content, $statut, $id)
     {
-      $articleUpdate = new Articles(['title' => $title, 'content' => $content, 'statut' => $statut, 'id' => $id]);
-      $this->article->updateArticle($articleUpdate);
+      // $articleUpdate = new Articles(['title' => $title, 'content' => $content, 'statut' => $statut, 'id' => $id]);
+      $this->article->updateArticle($title, $content, $statut, $id);
 
       // Raffraîchit la vue viewArticleAdmin
-      $this->articleAdmin($id);
+      // $this->articleAdmin($id);
+      header("Location: index.php?action=articleAdmin&id=".$id);
     }
 
 

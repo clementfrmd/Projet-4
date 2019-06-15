@@ -51,13 +51,13 @@
             // Requête signaler un commentaire
             case 'reportComment':
               // Récupère les paramètres
-              $id = intval($this->getParameter($_POST, 'idComment'));
-              $articleId = intval($this->getParameter($_POST, 'idArticle'));
-              $username = $this->getParameter($_POST, 'username');
-              $comment = $this->getParameter($_POST, 'txtComment');
-              $report = 1;
+              $id = intval($this->getParameter($_GET, 'idComment'));
+              $articleId = intval($this->getParameter($_GET, 'idArticle'));
+              // $username = $this->getParameter($_POST, 'username');
+              // $comment = $this->getParameter($_POST, 'txtComment');
+              // $report = 1;
               // Signale un commentaire
-              $this->ctrlArticles->changeComment($articleId, $username, $comment, $report, $id);
+              $this->ctrlArticles->reportComment($id);
               $this->ctrlArticles->article($articleId);
             break;
 
@@ -167,7 +167,7 @@
                   // Ajoute l'article
                   $this->ctrlUsers->newArticle($title, $content, $statut);
                   // Retour à l'accueil de l'administration
-                  $this->ctrlUsers->homeAdmin();
+                  // $this->ctrlUsers->homeAdmin();
                 }
                 else {
                   throw new \Exception("Statut de l'article non valide");

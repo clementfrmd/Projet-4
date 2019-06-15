@@ -62,7 +62,7 @@
     <div class="commentsList">
       <?php foreach ($comments as $comment): ?>
         <!-- FORMULAIRE POUR SIGNALER LE COMMENTAIRE -->
-        <form class="formReport" action="index.php?action=reportComment" method="post">
+        <!-- <form class="formReport" action="index.php?action=reportComment&idComment=" method="post"> -->
           <fieldset class="reportComment">
             <!-- Nom et date d'ajout du commentaire -->
             <legend><b><?= $comment['username'] ?></b> a commenté :</legend>
@@ -72,24 +72,22 @@
               <!-- Si commentaire n'est pas signalé -->
               <?php if (!$comment['report']) { ?>
                 <!-- Bouton signaler -->
-                <button type="submit" class="buttonReport">Signaler</i></button>
+                <!-- <button type="submit" class="buttonReport">Signaler</i></button> -->
+            <a href="index.php?action=reportComment&idComment=<?=$comment['id']?>&idArticle=<?=$comment['articleId']?>">Signaler</a>
               <?php } else {
-                  echo "<i class='signal'>Ce commentaire a été signalé !</i>";
+                  echo "<i class='signal'>Ce commentaire a été signalé</i>";
                 }
               ?>
             </div>
-
-
-
             <!-- Affiche le commentaire -->
             <p><?= $comment['comment'] ?></p>
             <!-- Données envoyées si le commentaire est signalé -->
-            <input type="hidden" name="idArticle" value="<?= $comment['articleId'] ?>" />
+            <!-- <input type="hidden" name="idArticle" value="<?= $comment['articleId'] ?>" />
             <input type="hidden" name="username" value="<?= $comment['username'] ?>" />
-            <input type="hidden" name="txtComment" value="<?= $comment['comment'] ?>" />
+            <input type="hidden" name="txtComment" value="<?= $comment['comment'] ?>" /> -->
             <!-- Sinon affiche que le commentaire a été signalé -->
           </fieldset>
-        </form>
+        <!-- </form> -->
       <?php endforeach; ?>
     </div>
   </div>
