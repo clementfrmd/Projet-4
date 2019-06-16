@@ -3,7 +3,7 @@
 
   use App\Config\PDOManager;
 
-$articlesPerPages = 10;
+$articlesPerPages = 3;
 $articlesTotalReq = $bdd->query('SELECT id FROM articles');
 $articlesTotal = $articlesTotalReq->rowCount();
 $pagesTotales = ceil($articlesTotal/$articlesPerPages);
