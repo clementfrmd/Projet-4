@@ -20,7 +20,7 @@
 </aside>
 
 
-<!-- Last 3 articles -->
+<!-- Get Last 3 articles -->
 <div class="content">
 <div class="w3-container w3-center w3-animate-zoom">
   <h2><i class="far fa-file-alt"></i> Derniers chapitres :</h2>

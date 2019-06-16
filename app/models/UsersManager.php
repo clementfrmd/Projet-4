@@ -6,7 +6,7 @@
 
   class UsersManager extends PDOManager
   {
-    // Récupère les données d'un utilisateur
+    // Get user data
     public function getUser($username)
     {
       $sql = "SELECT id, username, password FROM users WHERE username = ?"; //Empêche injection SQL = requête paramétrée
@@ -14,15 +14,6 @@
       $user = $req->fetch();
 
       return $user;
-    }
-
-    // Modifie l'utilisateur
-    public function updateUser($password, $username, $id)
-    {
-      $sql = "UPDATE users SET password = ?, username = ? WHERE id = ?";
-      $newPassword = $this->executeRequest($sql, array($password, $username, $id));
-
-      return $newPassword;
     }
   }
 ?>

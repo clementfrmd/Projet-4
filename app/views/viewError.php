@@ -1,6 +1,6 @@
-<!-- TITTRE DE LA PAGE -->
+<!-- TITLE -->
 <?php $this->title = "Erreur sur la page"; ?>
 
 
-<!-- Message d'erreur -->
+<!-- ERROR MESSAGE -->
 <p>Une erreur est survenue : <?= $msgError ?></p>

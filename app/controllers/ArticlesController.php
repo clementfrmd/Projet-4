@@ -39,10 +39,7 @@
     // Add comments to the article
     public function commentArticle($articleId, $username, $comment)
     {
-      //var_dump ($_POST);
-      //die();
-      // $newComment = new Comments(['articleId' => $articleId, 'username' => $username, 'comment' => $comment]);
-      $this->comments->addComment($articleId, $username, $comment);
+    $this->comments->addComment($articleId, $username, $comment);
 
       // Reload the article
       $this->article($articleId);
@@ -52,13 +49,11 @@
     // Article modification function
     public function changeComment($articleId, $username, $comment, $report, $id)
     {
-      // $commentUpdate = new Comments(['articleId' => $articleId, 'username' => $username, 'comment' => $comment, 'report' => $report, 'id' => $id]);
       $this->comments->updateComment($articleId, $username, $comment, $report, $id);
     }
     public function reportComment($id)
     {
       $this->comments->reportComment($id);
-      // echo "commentaire signalé";
     }
   }
 ?>

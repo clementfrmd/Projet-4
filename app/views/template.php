@@ -26,15 +26,15 @@
         <h1></i> Billet simple pour l'Alaska</h1>
         <p>Un roman de Jean Forteroche</p>
       </div>
-      <!-- Menu de navigation -->
+      <!-- NAV -->
       <ul class="menu">
         <li><a href="index.php"><i class="fas fa-home"></i> Accueil</a></li>
-        <!-- Si pas de session affiche se sonnecter -->
+        <!-- If no logged already Get user connection -->
 
         <?php if (empty($_SESSION)) { ?>
           <li><a href="index.php?action=login"><i class="fas fa-user-edit"></i> Se connecter</a></li>
 
-        <!-- Sinon affiche l'utilisateur et le lien de deconnexion -->
+        <!-- Deconection link -->
         <?php } else { ?>
           <li><a href="index.php?action=login"><i class="fas fa-user-edit"></i> <?= $_SESSION['username']; ?></a></li>
           <li><a href="index.php?action=disconnect"><i class="fas fa-sign-out-alt"></i> Se déconnecter</a></li>
@@ -131,7 +131,6 @@
       <a href="http://clement-fermaud.com/" target="_blank" style="color: white"> - Clément Fermaud</p>
     </footer>
     </div>
-    <!--<script src="../js/cookieName.js"></script>-->
     <script>
 function myFunction() {
   alert("Projet 4 - OpenClassrooms / Création du blog d'un écrivain fictif");

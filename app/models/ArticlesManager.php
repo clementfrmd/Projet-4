@@ -6,7 +6,7 @@
 
   class ArticlesManager extends PDOManager
   {
-    // Récupère les 3 derniers articles avec un aperçu du contenu
+    // Get last 3 articles
     public function getArticles()
     {
       $sql = "SELECT id, title, SUBSTRING(content, 1, 500) AS preview, DATE_FORMAT(dateArt, '%d/%m/%Y à %Hh%imin%ss') AS dateArt_fr, statut FROM articles WHERE statut = 1 ORDER BY dateArt DESC LIMIT 0, 3";
@@ -15,7 +15,7 @@
       return $articles;
     }
 
-    // Récupère la liste des titres des articles
+    // Get list of titles and articles
     public function getArticlesList()
     {
       $sql = "SELECT id, title, statut FROM articles";
@@ -24,7 +24,7 @@
       return $articlesList;
     }
 
-    // Récupère un article avec son id
+    // Get articles with id
     public function getArticle($articleId)
     {
       $sql = "SELECT id, title, content, DATE_FORMAT(dateArt, '%d/%m/%Y à %Hh%imin%ss') AS dateArt_fr, statut FROM articles WHERE id = ?";
@@ -35,15 +35,7 @@
       return $article;
     }
 
-    // Ajoute un article
-    // public function addArticle(Articles $articles)
-    // {
-    //   $sql = "INSERT INTO articles(title, content, dateArt, statut) VALUES(?,?,NOW(),?)";
-    //   $newArticle = $this->executeRequest($sql, array($articles->title(), $articles->content(), $articles->statut()));
-
-    //   return $newArticle;
-    // }
-// Ajoute un article SL
+// Add article
     public function addArticle($title, $content, $statut)
     {
       $sql = "INSERT INTO articles(title, content, dateArt, statut) VALUES(?,?,NOW(),?)";
@@ -52,7 +44,7 @@
       return $newArticle;
     }
 
-    // Modifie un article
+    // Modify article
     public function updateArticle($title, $content, $statut, $id)
     {
       $sql = "UPDATE articles SET title = ?, content = ?, statut = ? WHERE id = ?";
@@ -61,7 +53,7 @@
       return $newArticle;
     }
 
-    // Efface un article
+    // EDelete article
     public function deleteArticle($id)
     {
       $sql = "DELETE FROM articles WHERE id = ?";

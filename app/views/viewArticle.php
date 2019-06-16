@@ -7,7 +7,7 @@
   <div class="menuAside">
     <h2>Liste des chapitres</h2>
     <ul>
-      <!-- Liste des titres des articles -->
+      <!-- LIST OF ARTICLES -->
       <?php foreach ($articlesList as $articleList): ?>
         <?php if ($articleList['statut']): ?>
         <li><a href="<?= "index.php?action=article&id=" . $articleList['id'] ?>">
@@ -20,74 +20,65 @@
 </aside>
 
 
-<!-- AFFICHAGE DE L'ARTICLE -->
+<!-- ASHOWS ARTICLE -->
 <div class="content">
   <article class="articles">
-    <!-- Titre et date d'ajout de l'article -->
+    <!-- TITLES AND DATE OF ADDING -->
     <header>
       <h2 class="articleTitle"><i class="fas fa-book"></i> <?= $article['title'] ?></h2>
       <time><?= $article['dateArt_fr'] ?></time>
     </header>
 
-    <!-- Contenu de l'article -->
+    <!-- CONTENT -->
     <p><?= $article['content'] ?></p>
   </article>
 
   <div class="comments">
     <h3><i class="far fa-comment-dots"></i> Commentaires du chapitre : <?= $article['title'] ?></h3>
 
-    <!-- FORMULAIRE D'AJOUT DE COMMENTAIRE -->
+    <!-- ADD COMMENT -->
     <form class="formComment" action="index.php?action=addComment" method="post">
       <fieldset class="addComment">
         <legend>Ajouter un commentaire</legend>
 
-        <!-- Nom de l'auter du commentaire -->
+        <!-- AUTHOR OF COMMENT -->
         <input type="text" name="username" id="username" placeholder="Votre pseudo" required /><br />
 
-        <!-- Contenu du commentaire -->
+        <!-- CONTENT OF COMMENT -->
         <textarea name="txtComment" id="txtComment" rows="8" cols="80" placeholder="Votre commentaire" required></textarea><br />
 
-        <!-- Bouton valider -->
+        <!-- VALIDATION BUTTON -->
         <div>
           <button type="submit">Commenter</button>
           <button type="reset">Effacer</button>
         </div>
-        <!-- Donnée supplémentaire envoyée -->
+        <!-- ID -->
         <input type="hidden" name="idArticle" value="<?= $article['id'] ?>" />
       </fieldset>
     </form>
 
 
-    <!-- AFFICHAGE DES COMMENTAIRES -->
+    <!-- SHOWS COMMENTS -->
     <div class="commentsList">
       <?php foreach ($comments as $comment): ?>
-        <!-- FORMULAIRE POUR SIGNALER LE COMMENTAIRE -->
-        <!-- <form class="formReport" action="index.php?action=reportComment&idComment=" method="post"> -->
-          <fieldset class="reportComment">
-            <!-- Nom et date d'ajout du commentaire -->
+      <fieldset class="reportComment">
+            <!-- USERNAME AND DATE -->
             <legend><b><?= $comment['username'] ?></b> a commenté :</legend>
 
             <div class="headerReport">
               <time>le <?= $comment['dateCom_fr'] ?></time>
-              <!-- Si commentaire n'est pas signalé -->
+              <!-- SHOWS BUTTON FOR REPORT -->
               <?php if (!$comment['report']) { ?>
-                <!-- Bouton signaler -->
-                <!-- <button type="submit" class="buttonReport">Signaler</i></button> -->
+                <!-- REPORT BUTTON -->
             <a href="index.php?action=reportComment&idComment=<?=$comment['id']?>&idArticle=<?=$comment['articleId']?>">Signaler</a>
               <?php } else {
                   echo "<i class='signal'>Ce commentaire a été signalé</i>";
                 }
               ?>
             </div>
-            <!-- Affiche le commentaire -->
+            <!-- SHOWS COMMENT -->
             <p><?= $comment['comment'] ?></p>
-            <!-- Données envoyées si le commentaire est signalé -->
-            <!-- <input type="hidden" name="idArticle" value="<?= $comment['articleId'] ?>" />
-            <input type="hidden" name="username" value="<?= $comment['username'] ?>" />
-            <input type="hidden" name="txtComment" value="<?= $comment['comment'] ?>" /> -->
-            <!-- Sinon affiche que le commentaire a été signalé -->
           </fieldset>
-        <!-- </form> -->
       <?php endforeach; ?>
     </div>
   </div>

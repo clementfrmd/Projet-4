@@ -20,49 +20,49 @@
     }
 
 
-    // Affiche l'accueil de la partie administration
+    // Home Administration
     public function homeAdmin()
     {
-      // Récupère la liste des titres des articles
+      // Show all articles titles
       $articles = $this->article->getArticlesList();
-      // Récupère les commentaires signalés
+      // Show reported comments
       $reportComments = $this->comments->getReport();
 
-      // Génère la vue viewAdminHome
+      // viewAdminHome
       $view = new View("AdminHome");
       $view->generateView(array('articlesList' => $articles, 'comments' => $reportComments));
     }
 
 
-    // Affiche l'ajout d'article
+    // Show add Articles
     public function addArticleView()
     {
-      // Récupère la liste des titres des articles
+      // List of titles
       $articles = $this->article->getArticlesList();
 
-      // Génère la vue viewAddArticle
+      // viewAddArticle
       $view = new View("AddArticle");
       $view->generateView(array('articlesList' => $articles));
     }
 
 
-    // Vérification de l'utilisateur et du mot de passe
+    // Username and password authentication
     public function login($username, $password)
     {
-      // Récupère un utilisateur
+      // Get Username
       $user = $this->users->getUser($username);
 
-      // Vérifie que le mot de passe correspond
+      // Password verification
       $checkPassword = password_verify($password, $user['password']);
-      // Si le mot de passe est bon
+      // Log if paswword correct
       if ($checkPassword) {
         $_SESSION['id'] = $user['id'];
         $_SESSION['username'] = $user['username'];
 
-        // Affiche la vue accueil administration
+        // Show home administration
         $this->homeAdmin();
       }
-      // Sinon affiche un message d'erreur
+      // Else show arror message
       else {
         $errorLogin = "Votre identifiant ou votre mot de passe est incorrect";
         require('../App/Views/viewLogin.php');
@@ -70,92 +70,65 @@
     }
 
 
-    // Modification du mot de passe
-    public function updatePassword($username, $password1, $password2)
-    {
-      $id = $_SESSION['id'];
-      // Si les mots de passe correspondent
-      if ($password1 == $password2) {
-        // crypte le mot de passe
-        $newPassword = password_hash($password1, PASSWORD_DEFAULT);
-
-        // Modifie le mot de passe
-        $this->users->updateUser($newPassword, $username, $id);
-
-        // Affiche un message
-        $errorLogin = "Votre mot de passe est changé";
-        require('../App/Views/viewUpdateLogin.php');
-      }
-      // Sinon affiche un message d'erreur
-      else {
-        $errorLogin = "Votre mot de passe est incorrect";
-        require('../App/Views/viewUpdateLogin.php');
-      }
-    }
-
-    // Destruction de la session a la deconnexion
+    // Deconnection
     public function disconnect()
     {
       $_SESSION = array();
       session_destroy();
 
-      // Suppression des cookies de connexion automatique
+      // Deleting connexion cookies
       setcookie('login', '');
       setcookie('pass_hache', '');
     }
 
 
-    // Efface un commentaire
+    // Delete comments
     public function eraseComment($id)
     {
       $this->comments->deleteComment($id);
-      // Affiche la vue accueil administration
+      // Shows home administration
       $this->homeAdmin();
     }
 
 
-    // Affiche l'article à modifier
+    // Shows article to modify
     public function articleAdmin($articleId)
     {
-      // Récupère l'article
+      // Get article
       $article = $this->article->getArticle($articleId);
-      // Récupère les commentaires de l'article
+      // Get comments
       $comments = $this->comments->getComments($articleId);
-      // Récupère la liste des titres des chapitres
+      // Get articles titles
       $articlesList = $this->article->getArticlesList();
 
-      // Génère la vue viewArticleAdmin
+      // viewArticleAdmin
       $view = new View("ArticleAdmin");
       $view->generateView(array('article' => $article, 'comments' => $comments, 'articlesList' => $articlesList));
     }
 
 
-    // Ajoute un nouvel article
+    // Add an article
    public function newArticle($title, $content, $statut)
     {
-    //  $newArticle = new Articles(['title' => $title, 'content' => $content, 'statut' => $statut]);
      $this->article->addArticle($title, $content, $statut);
      header("Location: index.php");
    }
 
 
-    // Modifie un article
+    // Modify an article
     public function changeArticle($title, $content, $statut, $id)
     {
-      // $articleUpdate = new Articles(['title' => $title, 'content' => $content, 'statut' => $statut, 'id' => $id]);
       $this->article->updateArticle($title, $content, $statut, $id);
 
-      // Raffraîchit la vue viewArticleAdmin
-      // $this->articleAdmin($id);
-      header("Location: index.php?action=articleAdmin&id=".$id);
+     header("Location: index.php?action=articleAdmin&id=".$id);
     }
 
 
-    // Efface un article
+    // Delete article
     public function eraseArticle($id)
     {
       $this->article->deleteArticle($id);
-      // Retour à l'accueil de l'administration
+      // Return to home administration
       $this->homeAdmin();
     }
   }

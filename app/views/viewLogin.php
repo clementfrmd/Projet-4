@@ -1,32 +1,32 @@
-<!-- TITRE DE LA PAGE -->
+<!-- TITLE -->
 <?php $title = "Connexion"; ?>
 
 <!-- MAIN -->
 
 <?php ob_start(); ?>
-<!-- FORMULAIRE DE CONNEXION -->
+<!-- CONNEXION -->
 <div class="contentLogin">
   <div class="login">
     <h2>Veuillez vous connecter pour accéder à l'espace administrateur.</h2>
     <form class="formConnexion" action="index.php?action=adminLogin" method="post">
       <fieldset>
         <legend>Connexion</legend>
-        <!-- Nom d'utilisateur -->
+        <!-- USERNAME -->
         <label for="username">Pseudo :</label>
         <input type="text" name="username" placeholder="Votre pseudo" required><br />
-        <!-- Mot de passe -->
+        <!-- PASSWORD -->
         <label for="password">Mot de passe :</label>
         <input type="password" name="password" placeholder="Votre mot de passe" required><br />
 
         <div class="button">
-          <!-- Bouton valider -->
+          <!-- VALIDATION BUTTON -->
           <button type="submit">Valider</button>
-          <!-- Bouton effacer -->
+          <!-- DELATE BUTTON -->
           <button type="reset">Effacer</button>
         </div>
       </fieldset>
     </form>
-    <!-- Affichage du message d'erreur de connexion -->
+    <!-- ERROR MESSAGE -->
     <p class="signal"><?= $errorLogin ?></p>
   </div>
 </div>

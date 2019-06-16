@@ -24,16 +24,16 @@
   <div class="articles">
   <h2 class="articleTitle"><i class="far fa-edit"></i> Ajouter un nouveau chapitre :</h2>
 
-  <!-- FORMULAIRE AJOUT D'ARTICLE -->
+  <!-- ADD ARTICLE -->
   <form action="index.php?action=addArticle&statut=0" method="post">
     <p>
-      <!-- Titre de l'article -->
+      <!-- TITLES -->
       <label for="title">Entrez votre titre :</label>
       <input type="text" name="title" required>
     </p>
-    <!-- Contenu de l'article -->
+    <!-- CONTENT -->
     <textarea name="txtContent" id="mytextarea"></textarea>
-    <!-- Bouton d'envoie -->
+    <!-- VALIDATION BUTTON -->
 <br>
     <button type="submit">Enregistrer</button>
     <button type="submit" formaction="index.php?action=addArticle&statut=1">Publier</button>
