@@ -4,7 +4,7 @@
 <!-- MAIN -->
 
 <?php ob_start(); ?>
-<!-- CONNEXION -->
+<!-- CONNECTION -->
 <div class="contentLogin">
   <div class="login">
     <h2>Veuillez vous connecter pour accéder à l'espace administrateur.</h2>

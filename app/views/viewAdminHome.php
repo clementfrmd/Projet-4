@@ -23,6 +23,10 @@
 
 
 <div class="content">
+<h2>Changer le mot de passe :</h2>
+  <!-- Link to password modification -->
+  <p class="comments">Pour modifier votre mot de passe <a
+    href ="index.php?action=password">cliquez ici</a></p>
   <h2>Gestion des commentaires signalés :</h2>
   <div class="comments">
     <!-- SHOW REPORTED COMMENTS -->
