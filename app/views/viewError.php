@@ -3,4 +3,6 @@
 
 
 <!-- ERROR MESSAGE -->
-<p>Une erreur est survenue : <?= $msgError ?></p>
+<div><h1>Erreur 404</h1>
+
+<p>Cette page n'existe pas.</p></div>
