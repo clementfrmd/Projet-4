@@ -417,11 +417,51 @@ textarea {
   body {
     font-size: 0.8em;
   }
+  .content {
+    padding: 0px;
+    width: 90%;
+  }
+  .menu li i {
+    font-size: 20px;
+}
+.menu li {
+  padding: 10px;
+  padding: 30px;
+  text-align: center;
+  font-size: 0;
+}
 }
 
 @media screen and (max-width: 705px) {
   .main {
     flex-wrap: wrap;
+  }
+
+  .snow {
+    position: unset;
+    min-width: unset;
+    min-height: unset;
+    height: unset;
+    width: unset;
+    top: unset;
+    left: unset;
+  }
+  
+  .main {
+    margin-top: -250px;
+  }
+  
+  .content {
+    padding: unset;
+    width: unset;
+  }
+  
+  .menuTitle h1 {
+    text-align: center;
+  }
+  
+  .menu li {
+    padding: 5px;
   }
 
   #header {
