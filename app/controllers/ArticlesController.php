@@ -25,6 +25,11 @@
     {
       // Push the article
       $article = $this->article->getArticle($articleId);
+      if (!$article){
+        $view = new View("Error");
+        $view->generateView(array());
+        return;
+      }
       // Push the comments from the article
       $comments = $this->comments->getComments($articleId);
       // Show article's title

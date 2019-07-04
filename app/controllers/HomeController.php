@@ -19,13 +19,17 @@
     // Home page view
     public function home()
     {
+      $page = 0;
+      if (isset($_GET["page"]) && !empty($_GET["page"]) && is_numeric($_GET["page"])){
+        $page = intval($_GET["page"]);
+      }
       // Get the last 3 articles
       $articles = $this->article->getArticles();
       // Get article's titles
-      $articlesList = $this->article->getArticlesList();
+      $articlesList = $this->article->getArticlesList($page);
       // viewHome generation function
       $view = new View("Home");
-      $view->generateView(array('articles' => $articles, 'articlesList' => $articlesList));
+      $view->generateView(array('articles' => $articles, 'articlesList' => $articlesList, 'page' => $page ));
     }
   }
 ?>
