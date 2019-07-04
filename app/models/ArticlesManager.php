@@ -16,13 +16,21 @@
     }
 
     // Get list of titles and articles
-    public function getArticlesList()
+    public function getArticlesList($page = null)
     {
-      $sql = "SELECT id, title, statut FROM articles";
-      $articlesList = $this->executeRequest($sql);
+        if ($page == null)
+        {
+        $sql = "SELECT id, title, statut FROM articles";
+        $articlesList = $this->executeRequest($sql);
+      }
+      else {
+        $limit = $page*3;
+        $sql = "SELECT id, title, statut FROM articles LIMIT ?, 10";
+        $articlesList = $this->executeRequest($sql, array($limit));
 
+      }
       return $articlesList;
-    }
+  }
 
     // Get articles with id
     public function getArticle($articleId)
